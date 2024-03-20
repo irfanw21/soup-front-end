@@ -1,8 +1,24 @@
 import { useState } from "react"
+import styled from "styled-components"
 import './index.css'
+
+import Button from "../../components/Button"
+
+const Input = styled.input `
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 20px
+`
 
 const Homepage = () => {
     const [state, setState] = useState(0)
+    const [data, setData] = useState({
+        nama: "Andi",
+        age: 20
+    })
+    const gap = false
 
     const handleClick = () => {
         setState(state + 1)
@@ -13,12 +29,43 @@ const Homepage = () => {
             setState(state - 1)
         }
     }
+
+    const handleInput = (e) => {
+        const value = e.target?.value
+        const name = e.target?.name
+
+        setData({
+            ...data, // spread operator supaya ngetrack apa yang diubah
+            [name]: value
+            // nama: value
+        })
+    }
+
+    console.log(data)
+
     return (
         <div className = "homepage"> 
-        <h1>Homepage</h1>
-        <h2>{state}</h2>
-        <button onClick={handleClick}>Click me</button>
-        <button onClick={handleKurang}>Kurang</button>
+            <h1>Homepage</h1>
+            <h2>{state}</h2>
+            <button onClick={handleClick}>Click me</button>
+            <button onClick={handleKurang}>Kurang</button>
+
+            <div style={{ marginTop: gap ? '10px' : '24px' }}>
+                <div>Email</div>
+                <input name="nama" onChange={(e) => handleInput(e)} />
+
+                <div>age</div>
+                <input type="number" name="age" onChange={(e) => handleInput(e)} />
+            </div>
+            
+            <div style={{ display: 'grid', gridTemplateColumns: 'auto auto auto', gap: '10px'}}>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', gridColumn: 'span 3 / span 3', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+                <div style={{ height: '50px', backgroundColor: 'blue'}}></div>
+            </div>
         </div>
     );
 }

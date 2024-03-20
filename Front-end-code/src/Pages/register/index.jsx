@@ -20,6 +20,10 @@ const Register = () => {
     })
     const gap = false
 
+    const handleClick = () => {
+        
+    }
+
     const handleInput = (e) => {
         const value = e.target?.value
         const name = e.target?.name
@@ -51,6 +55,10 @@ const Register = () => {
                 <div>Confirm Password</div>
                 <input name="confirm" onChange={(e) => handleInput(e)} />
             </div>
+
+            <button onClick={handleClick}>Register</button>
+
+            <div>Have an account? Log In</div>
             
             
         </div>
