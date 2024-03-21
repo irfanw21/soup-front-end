@@ -40,6 +40,10 @@ const Register = () => {
     return (
         <div className = "register"> 
             <h1>Are you ready to become professional cheff?</h1>
+
+            <button onClick={handleClick}>Log In</button>
+            <button onClick={handleClick}>Register</button>
+
             <h2>Please register first</h2>
 
             <div style={{ marginTop: gap ? '10px' : '24px' }}>
@@ -56,7 +60,7 @@ const Register = () => {
                 <input name="confirm" onChange={(e) => handleInput(e)} />
             </div>
 
-            <button onClick={handleClick}>Register</button>
+            <button onClick={handleClick}>Sign Up</button>
 
             <div>Have an account? Log In</div>
             
