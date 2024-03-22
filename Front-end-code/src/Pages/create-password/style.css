@@ -22,11 +22,9 @@
     justify-content: space-between;
 }
 
-
 .items-center {
     align-items: center;
 }
-
 
 .font-500 {
     font-weight: 600;
@@ -75,7 +73,7 @@
     border-radius: 8px;
 }
 
-.button-signup{
+.button-confirmation{
     width: 140px;
     height: 38px;
     padding: 10px;

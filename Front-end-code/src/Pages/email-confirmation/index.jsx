@@ -9,7 +9,6 @@ const EmailConfirmation = () => {
             <div className="navbar-email-confirmation">
                 <div className='flex items-center'>
                     <div className='mr-10'><img src={ImageNavbar} /></div>
-                    <div className='fon-400 text-24'>Soup</div>
                 </div>
             </div>
 

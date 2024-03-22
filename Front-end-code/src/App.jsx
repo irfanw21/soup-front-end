@@ -3,13 +3,17 @@ import './App.css'
 //import Register from "./Pages/register"
 import EmailConfirmation from "./Pages/email-confirmation"
 import Detail from "./Pages/Detail/detail"
+import Register from './Pages/register'
+import CreatePassword from './Pages/create-password'
 
 function App() {
 
 
   return (
     <>
-      <EmailConfirmation/>
+      {/* <Register/> */}
+      {/* <CreatePassword/> */}
+      <Detail/>
     </>
   )
 }
