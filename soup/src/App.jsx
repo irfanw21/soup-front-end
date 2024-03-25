@@ -16,7 +16,7 @@ function App() {
     //     {/* <Register/> */}
     //     {/* <CreatePassword/> */}
     //     {/* <Detail/> */}
-    //     <LandingPage/>
+        // <LandingPage/>
 
     // </>
     <Routes>
