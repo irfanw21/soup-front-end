@@ -5,6 +5,7 @@ import Detail from "./pages/detail/detail"
 import Register from './pages/register'
 import CreatePassword from './pages/create-password'
 import LandingPage from './pages/landing'
+import DetailProduk from './pages/detail-produk'
 import { Routes, Route } from 'react-router-dom'
 import Layout from "./layouts"
 
@@ -27,6 +28,7 @@ function App() {
           <Route path='/detail' element={<Detail />} />
           <Route path='/create-password' element={<CreatePassword />} />
           <Route path='/landing' element={<LandingPage/>} />
+          <Route path='/detail-produk' element={<DetailProduk/>} />
         </Route>
       </Routes>
   )

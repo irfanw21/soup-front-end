@@ -34,8 +34,6 @@ const LandingPage = () => {
     
     }
 
-    const productType = ['Electric', 'LCGC', 'Offroad', 'SUV', 'Hatchback', 'MPV', 'Sedan', 'Truck']
-
     return (
         <Container>
             <div className = "navbar-landing">
