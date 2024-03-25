@@ -1,0 +1,17 @@
+.body-landing {
+    margin-top: 44px;
+}
+
+.flex {
+    display: flex;
+}
+
+
+.flex-space-between{
+    justify-content: space-between;
+
+}
+
+.items-center {
+    align-items: center;
+}

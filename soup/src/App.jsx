@@ -8,6 +8,7 @@ import LandingPage from './pages/landing'
 import DetailProduk from './pages/detail-produk'
 import { Routes, Route } from 'react-router-dom'
 import Layout from "./layouts"
+import AfterLogin from './pages/after-login'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
     <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
+          <Route path='/afterlogin' element={<AfterLogin/>}/>
           <Route path='/register' element={<Register />} />
           <Route path='/email-confirmation' element={<EmailConfirmation />} />
           <Route path='/detail' element={<Detail />} />
