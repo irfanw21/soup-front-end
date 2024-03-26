@@ -26,7 +26,7 @@ import '@fontsource/Montserrat/700.css';
 
 const ListMenuKelas = () => {
     return(
-        <Box>
+        <Container>
             <Box
                 sx={{
                     display: 'flex',
@@ -117,9 +117,7 @@ const ListMenuKelas = () => {
                     alignContent: 'center',
                     justifyItems: 'center',
                     fontFamily: 'Montserrat',
-                    marginTop: '60px',
-                    paddingLeft: '91px',
-                    paddingRight: '91px'
+                    marginTop: '60px'
                 }}
             >
                 <div><img src={sushi}/>
@@ -420,7 +418,7 @@ const ListMenuKelas = () => {
 
             </Box>
 
-        </Box>
+        </Container>
     )
 
 }
