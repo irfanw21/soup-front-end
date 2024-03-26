@@ -14,24 +14,25 @@ function App() {
 
 
   return (
-    <>
-        {/* <Register/> */}
-        {/* <CreatePassword/> */}
-        {/* <Detail/> */}
-        {/* <LandingPage/> */}
-        <ListMenuKelas/>
+    // <>
+    //     {/* <Register/> */}
+    //     {/* <CreatePassword/> */}
+    //     {/* <Detail/> */}
+    //     {/* <LandingPage/> */}
+    //     <ListMenuKelas/>
 
-    </>
-    // <Routes>
-    //     <Route path="/" element={<Layout />}>
-    //       <Route index element={<Homepage />} />
-    //       <Route path='/register' element={<Register />} />
-    //       <Route path='/email-confirmation' element={<EmailConfirmation />} />
-    //       <Route path='/detail' element={<Detail />} />
-    //       <Route path='/create-password' element={<CreatePassword />} />
-    //       <Route path='/landing' element={<LandingPage/>} />
-    //     </Route>
-    //   </Routes>
+    // </>
+    <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Homepage />} />
+          <Route path='/register' element={<Register />} />
+          <Route path='/email-confirmation' element={<EmailConfirmation />} />
+          <Route path='/detail' element={<Detail />} />
+          <Route path='/create-password' element={<CreatePassword />} />
+          <Route path='/landing' element={<LandingPage/>} />
+          <Route path='/list-menu-kelas' element={<ListMenuKelas/>} />
+        </Route>
+      </Routes>
   )
 }
 

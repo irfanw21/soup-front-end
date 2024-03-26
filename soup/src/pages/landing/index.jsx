@@ -35,6 +35,17 @@ const LandingPage = () => {
     
     }
 
+    const productCategories = [
+        'Electric',
+        'LCGC',
+        'Offroad',
+        'SUV',
+        'Hatchback',
+        'MPV',
+        'Sedan',
+        'Truck'
+      ];
+    
     return (
         <Container>
             <div className = "navbar-landing">
@@ -708,7 +719,8 @@ const LandingPage = () => {
                             style={{
                                 fontWeight: 500,
                                 fontSize: '16px',
-                                color: '#FABC1D'
+                                color: '#FABC1D',
+                                marginBottom: '8px'
                             }}
                         >About Us</div>
 
@@ -716,7 +728,8 @@ const LandingPage = () => {
                             style={{
                                 fontWeight: 400,
                                 fontSize: '14px',
-                                textAlign: 'justify'
+                                textAlign: 'justify',
+                                color: 'white'
                             }}
                         >
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
@@ -732,7 +745,8 @@ const LandingPage = () => {
                             style={{
                                 fontWeight: 500,
                                 fontSize: '16px',
-                                color: '#FABC1D'
+                                color: '#FABC1D',
+                                marginBottom: '8px'
                             }}
                         >Product</div>
 
@@ -740,10 +754,21 @@ const LandingPage = () => {
                             style={{
                                 fontWeight: 400,
                                 fontSize: '14px',
-                                textAlign: 'justify'
+                                display: 'flex',
+                                justifyContent: 'space-between',
+                                color: 'white'
                             }}
                         >
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
+                            <ul style={{ listStyleType: 'disc'}}>
+                                {productCategories.slice(0, Math.ceil(productCategories.length / 2)).map((category, index) => (
+                                    <li key={index}>{category}</li>
+                                ))}
+                                </ul>
+                                <ul style={{ listStyleType: 'disc'}}>
+                                {productCategories.slice(Math.ceil(productCategories.length / 2)).map((category, index) => (
+                                    <li key={index}>{category}</li>
+                                ))}
+                            </ul>                     
                         </div>
                     </div>
 
@@ -756,7 +781,8 @@ const LandingPage = () => {
                             style={{
                                 fontWeight: 500,
                                 fontSize: '16px',
-                                color: '#FABC1D'
+                                color: '#FABC1D',
+                                marginBottom: '8px'
                             }}
                         >Address</div>
 
@@ -764,7 +790,8 @@ const LandingPage = () => {
                             style={{
                                 fontWeight: 400,
                                 fontSize: '14px',
-                                textAlign: 'justify'
+                                textAlign: 'justify',
+                                color: 'white'
                             }}
                         >
                         Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
@@ -775,7 +802,8 @@ const LandingPage = () => {
                                 fontWeight: 500,
                                 fontSize: '16px',
                                 color: '#FABC1D',
-                                marginTop: '16px'
+                                marginTop: '16px',
+                                marginBottom: '8px'
                             }}
                         >Contact Us</div>
 
@@ -799,6 +827,8 @@ const LandingPage = () => {
                     
                 </Box>
             </div>
+
+            
         </Container>
         
     )
