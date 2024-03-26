@@ -26,6 +26,7 @@ import styled from "styled-components"
 import '@fontsource/Montserrat/300.css';
 import '@fontsource/Montserrat/400.css';
 import '@fontsource/Montserrat/500.css';
+import '@fontsource/Montserrat/600.css';
 import '@fontsource/Montserrat/700.css';
 
 const LandingPage = () => {
