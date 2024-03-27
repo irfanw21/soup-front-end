@@ -49,6 +49,8 @@ const Login = () => {
   };
 
   return (
+    <Box>
+    <HeaderAuth/>
     <Box
       className="login-container"
       sx={{
@@ -185,7 +187,7 @@ const Login = () => {
         }
         `}
       </style>
-      <HeaderAuth/>
+
       <Box className="welcome-text">
       Welcome Back! Cheff
       </Box>
@@ -237,6 +239,7 @@ const Login = () => {
       <Box className="signup-text">
         Don't have an account?<Link to="/register"><span>Sign Up here</span></Link>
       </Box>
+    </Box>
     </Box>
   );
 };

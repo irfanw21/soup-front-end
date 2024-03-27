@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './index.css'
 import { Box, TextField, Button, Typography, Link } from '@mui/material';
+import HeaderAuth from '../../components/Header-auth';
 
 const ForgotPassword = () => {
   const [formData, setFormData] = useState({
@@ -40,6 +41,7 @@ const ForgotPassword = () => {
 
   return (
     <>
+<HeaderAuth/>
       <Box
         className="login-container"
         sx={{

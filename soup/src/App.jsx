@@ -15,6 +15,9 @@ import HeaderSignIn from './components/Header-signed-in'
 import Login from './pages/login'
 import Footer from './components/Footer'
 import CustomizedTables from './pages/invoice'
+import AfterClass from './pages/after-class'
+import ForgotPassword from './pages/reset-password'
+import PaymentSuccess from './pages/payment-success'
 
 function App() {
 
@@ -34,10 +37,10 @@ function App() {
 
     // </>
     <Routes>
-        <Route path="/" element={<Layout />}>
           <Route index element={<Homepage />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/paymentsuccess' element={<PaymentSuccess/>} />
           <Route path='/email-confirmation' element={<EmailConfirmation />} />
           <Route path='/detail' element={<Detail />} />
           <Route path='/create-password' element={<CreatePassword />} />
@@ -46,7 +49,8 @@ function App() {
           <Route path='/list-menu-kelas' element={<ListMenuKelas/>} />
           <Route path='/checkout' element={<Checkout/>} />
           <Route path='/invoice' element={<CustomizedTables/>} />
-        </Route>
+          <Route path='/afterclass' element={<AfterClass/>} />
+          <Route path='/resetpassword' element={<ForgotPassword/>}/>
       </Routes>
   )
 }

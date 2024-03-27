@@ -385,4 +385,4 @@ const AfterClass = () => {
     )
 }
 
-export default LandingPage
+export default AfterClass
