@@ -7,6 +7,7 @@ import '@fontsource/Montserrat/300.css';
 import '@fontsource/Montserrat/400.css';
 import '@fontsource/Montserrat/500.css';
 import '@fontsource/Montserrat/700.css';
+import HeaderAuth from "../../components/Header-auth"
 
 const Input = styled.input `
     width: 100%;
@@ -94,6 +95,9 @@ const CreatePassword = () => {
 
     return (
         <Container>
+
+            <HeaderAuth/>
+
             <div className = "register">
                
 

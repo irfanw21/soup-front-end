@@ -21,7 +21,7 @@ import '@fontsource/Montserrat/400.css';
 import '@fontsource/Montserrat/500.css';
 import '@fontsource/Montserrat/600.css';
 import '@fontsource/Montserrat/700.css';
-import HeaderSignIn from "../../components/Header-signed-in"
+import HeaderSigni from "../../components/Header-signed-in"
 import Footer from "../../components/Footer"
 
 const AfterClass = () => {
@@ -120,7 +120,7 @@ const AfterClass = () => {
     
     return (
         <Container>
-            <HeaderSignIn/>
+            <HeaderAuth/>
 
             <Box
                 sx={{

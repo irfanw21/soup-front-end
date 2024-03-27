@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, TextField, Container, Button } from '@mui/material';
+import { useNavigate } from "react-router-dom"
 import HeaderAuth from "../../components/Header-auth"
 
 const Login = () => {
@@ -13,6 +14,8 @@ const Login = () => {
     password: ''
   });
 
+  const navigate = useNavigate()
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -23,6 +26,7 @@ const Login = () => {
 
   const handleClick = () => {
     // Your handleClick logic here
+    navigate('/after-class')
   };
 
   const onSubmit = (e) => {
@@ -35,7 +39,7 @@ const Login = () => {
         password: !formData.password ? 'Password is required' : ''
       });
       return;
-    }
+    } 
 
     // If validation passes, proceed with form submission
     console.log(formData);
@@ -49,6 +53,8 @@ const Login = () => {
   };
 
   return (
+    <Box>
+    <HeaderAuth/>
     <Box
       className="login-container"
       sx={{
@@ -59,6 +65,7 @@ const Login = () => {
         fontFamily: 'Montserrat, sans-serif'
       }}
     >
+      
       <style>
         {`
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
@@ -185,7 +192,7 @@ const Login = () => {
         }
         `}
       </style>
-      <HeaderAuth/>
+      
       <Box className="welcome-text">
       Welcome Back! Cheff
       </Box>
@@ -216,7 +223,7 @@ const Login = () => {
           {errors.password && <p className="error-message">{errors.password}</p>}
         </Box>
         <Box className="brief-text">
-          Forgot Password? <Link to="/forgot-password"><span>Click Here</span></Link>
+          Forgot Password? <Link to="/reset-password"><span>Click Here</span></Link>
         </Box>
         <Box className="button_login">
           <Button
@@ -237,6 +244,7 @@ const Login = () => {
       <Box className="signup-text">
         Don't have an account?<Link to="/register"><span>Sign Up here</span></Link>
       </Box>
+    </Box>
     </Box>
   );
 };

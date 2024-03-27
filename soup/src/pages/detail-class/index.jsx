@@ -1,37 +1,20 @@
-import ImageNavbar from "../../assets/image-navbar-logo.png"
-import imageTitle from "../../assets/title-bg.png"
-import interludeBg from "../../assets/interlude-bg.png"
 import tomyum from "../../assets/tomyum.png"
-import chococookies from "../../assets/chococookies.png"
-import greenteacheesecake from "../../assets/green-tea-cheesecake.png"
 import sotobanjar from "../../assets/soto-banjar.png"
-import strawfloat from "../../assets/strawberry-float.png"
-import bolognese from "../../assets/spaghetti-bolognese.png"
-import catasian from "../../assets/cat-asian.png"
-import catwestern from "../../assets/cat-western.png"
-import catjunkfood from "../../assets/cat-junkfood.png"
-import cathotdrink from "../../assets/cat-hot-drink.png"
-import cateastern from "../../assets/cat-eastern.png"
-import catdessert from "../../assets/cat-dessert.png"
-import catcookies from "../../assets/cat-cookies.png"
-import catcolddrink from "../../assets/cat-cold-drink.png"
-import logotelp from "../../assets/logo-telp.png"
-import logomail from "../../assets/logo-mail.png"
-import logotele from "../../assets/logo-telegram.png"
-import logoyt from "../../assets/logo-youtube.png"
-import logoinsta from "../../assets/logo-insta.png"
-import keranjang from "../../assets/keranjang.png"
-import user from "../../assets/user.png"
-import logout from "../../assets/logout.png"
-import HeaderSignIn from "../../components/Header-signed-in"
-import { useState } from "react"
-import {Box, TextField, Container, Button} from '@mui/material'
-import styled from "styled-components"
-import Footer from "../../components/Footer"
+import sushi from "../../assets/sushi-mentai.png"
+import ramen from "../../assets/ichiraku-ramen.png"
+import rendang from "../../assets/rendang.png"
+import pempek from "../../assets/pempek.png"
+import takoyaki from "../../assets/takoyaki.png"
+import jajangmeyon from "../../assets/jajangmeyon.png"
+import satepadang from "../../assets/sate-padang.png"
+import {Box, Container, Grid, Paper, Button} from '@mui/material'
 import '@fontsource/Montserrat/300.css';
 import '@fontsource/Montserrat/400.css';
 import '@fontsource/Montserrat/500.css';
+import '@fontsource/Montserrat/600.css';
 import '@fontsource/Montserrat/700.css';
+import HeaderSignIn from "../../components/Header-signed-in"
+import Footer from "../../components/Footer"
 
 const DetailClass = () => {
 
@@ -39,78 +22,115 @@ const DetailClass = () => {
     
     }
 
+    const proClass = [
+        {
+            id: 1,
+            category: 'Asian',
+            name: 'Sushi Salmon with Mentai',
+            price: 'IDR 200.000',
+            img: sushi
+        },
+        {
+            id: 2,
+            category: 'Asian',
+            name: 'Ichiraku Ramen',
+            price: 'IDR 200.000',
+            img: ramen
+        },
+        {
+            id: 3,
+            category: 'Asian',
+            name: 'Rendang Sapi',
+            price: 'IDR 200.000',
+            img: rendang
+        },
+        {
+            id: 4,
+            category: 'Asian',
+            name: '[Complit Package] Pempek Palembang',
+            price: 'IDR 600.000',
+            img: pempek
+        },
+        {
+            id: 5,
+            category: 'Asian',
+            name: 'Soto Banjar Limau Kuit',
+            price: 'IDR 150.000',
+            img: sotobanjar
+        },
+        {
+            id: 6,
+            category: 'Asian',
+            name: 'Takoyaki Octopus',
+            price: 'IDR 450.000',
+            img: takoyaki
+            
+        },
+        {
+            id: 7,
+            category: 'Asian',
+            name: 'Jajangmeyon',
+            price: 'IDR 250.000',
+            img: jajangmeyon
+        },
+        {
+            id: 8,
+            category: 'Asian',
+            name: 'Sate Padang',
+            price: 'IDR 300.000',
+            img: satepadang
+        }
+    ]
+
     return (
         <Container>
-         <div className="navbar-detail">
-         <HeaderSignIn/>
-    <div className="flex flex-space-between items-center">
-        <div style={{ marginRight: '10px' }}><img src={ImageNavbar} /></div>
-        <div className="flex">
-            <div style={{ marginRight: '10px' }}><img src={keranjang} /></div>
-            <Button
-                variant="outlined"
-                sx={[{ '&:hover': { backgroundColor: 'white', border: '1px solid #5B4947' }, width: '140px', borderRadius: '8px', marginRight: '10', backgroundColor: 'white', color: '#5B4947', border: 'none', fontFamily: 'Montserrat, sans-serif' }]}>
-                MyClass
-            </Button>
-            <Button
-                variant="outlined"
-                sx={[{ '&:hover': { backgroundColor: 'white', border: '1px solid #5B4947' }, width: '140px', borderRadius: '8px', marginRight: '10', backgroundColor: 'white', color: '#5B4947', border: 'none', fontFamily: 'Montserrat, sans-serif' }]}>
-                Invoice
-            </Button>
-            <div style={{ border: '1px solid black', height: '20px', width: '0px', marginLeft: '10px' }}></div>
-            <div className="flex items-center"> {/* Kontainer untuk elemen keranjang, user, dan logout */}
-                <div style={{ marginRight: '20px' , marginLeft:'30px' }}><img src={user} /></div>
-                <div style={{ marginRight: '5px' }}><img src={logout} /></div>
+        <HeaderSignIn/>
+        <Box>
+        <div className="flex" style={{alignItems: 'flex-start'}}>
+            <div>
+                <img src={tomyum} style={{ marginRight: '50px'  }}></img>
+            </div>
+            <div>
+                <div style={{fontSize: '40px'}}>
+                Tom yum thailand <br/>idr 450.000 <br/>
+                </div>
+                <select id="tanggal" name="tanggal" style={{marginTop: '40px', padding: '10px, 20px'}}>
+                    <option value="1">rabu, 27 juli 2022</option>
+                    <option value="2">selasa, 6 juni 2023</option>
+                    <option value="3">jumat, 10 oktober 2023</option>
+                </select>
+                <div style={{marginTop: '30px'}}>
+                <Button 
+                    variant="outlined"
+                    sx={[{ '&:hover': { 
+                            backgroundColor: 'white', 
+                            border: '1px solid #5B4947' }, 
+                        borderRadius: '8px', 
+                        marginRight: '40px', 
+                        backgroundColor: 'white', 
+                        border: '1px solid #5B4947', 
+                        color: '#5B4947', 
+                        width: '233.5px',
+                        fontFamily: 'Montserrat, sans-serif' }]}>
+                            Addtocart
+                </Button>
+                <Button 
+                    variant="contained" 
+                    onClick={handleClick} 
+                    sx={[{ '&:hover': { 
+                            backgroundColor: '#EA9E1F' }, 
+                        width: '140px', 
+                        borderRadius: '8px', 
+                        backgroundColor: '#EA9E1F', 
+                        color: '#5B4947', 
+                        width: '233.5px',
+                        fontFamily: 'Montserrat, sans-serif'}]}>
+                            Buynow
+                </Button>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-<Box>
-<div className="flex" style={{alignItems: 'flex-start'}}>
-    <div>
-        <img src={tomyum} style={{ marginRight: '50px'  }}></img>
-    </div>
-    <div>
-        <div style={{fontSize: '40px'}}>
-        Tom yum thailand <br/>idr 450.000 <br/>
-        </div>
-        <select id="tanggal" name="tanggal" style={{marginTop: '40px', padding: '10px, 20px'}}>
-            <option value="1">rabu, 27 juli 2022</option>
-            <option value="2">selasa, 6 juni 2023</option>
-            <option value="3">jumat, 10 oktober 2023</option>
-        </select>
-        <div style={{marginTop: '30px'}}>
-        <Button 
-                            variant="outlined"
-                            sx={[{ '&:hover': { 
-                                    backgroundColor: 'white', 
-                                    border: '1px solid #5B4947' }, 
-                                borderRadius: '8px', 
-                                marginRight: '40px', 
-                                backgroundColor: 'white', 
-                                border: '1px solid #5B4947', 
-                                color: '#5B4947', 
-                                width: '233.5px',
-                                fontFamily: 'Montserrat, sans-serif' }]}>
-                                    Addtocart
-                        </Button>
-                        <Button 
-                            variant="contained" 
-                            onClick={handleClick} 
-                            sx={[{ '&:hover': { 
-                                    backgroundColor: '#EA9E1F' }, 
-                                width: '140px', 
-                                borderRadius: '8px', 
-                                backgroundColor: '#EA9E1F', 
-                                color: '#5B4947', 
-                                width: '233.5px',
-                                fontFamily: 'Montserrat, sans-serif'}]}>
-                                    Buynow
-                        </Button>
-        </div>
-    </div>
-</div>
-</Box>
+        </Box>
 
            <Box
                 sx={{
@@ -150,282 +170,35 @@ const DetailClass = () => {
                 Another menu in this class
             </div>
 
-            <Box
-                sx={{
-                    justifyContent: 'space-between',
-                    gap: '24px',
-                    display: 'grid',
-                    gridTemplateColumns: 'auto auto auto',
-                    alignContent: 'center',
-                    justifyItems: 'center',
-                    fontFamily: 'Montserrat',
-                    marginTop: '60px'
-                }}
+            <Grid container spacing={2} fontFamily={'Montserrat'}
             >
-                <div><img src={tomyum}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
+                {proClass.map((data) => (
+                    <Grid item key={data.id} xs={12} sm={6} md={4}>
+                        <Paper elevation={0} style={{ padding: 0 }}>
+                            <div> <img src={data.img}/> </div>
                             <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
+                                    fontWeight: 400,
+                                    fontSize: '16px',
+                                    color: '#828282'
+                                }}
+                            > {data.category} </div>
                             <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Sushi Salmon with Mentai</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 200.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={tomyum}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
+                                    fontWeight: 600,
+                                    width: '320px',
+                                    height: '70px',
+                                    fontSize: '20px',
+                                    color: '#5B4947'
+                                }}> {data.name} </div>
                             <div style={{
                                 fontWeight: 600,
                                 fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Ichiraku Ramen</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 300.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={tomyum}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Rendang</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 200.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={tomyum}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>[Complit Package] Pempek Palembang</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 600.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={sotobanjar}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Soto Banjar</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 150.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={tomyum}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Tom Yum Thailand</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 450.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={tomyum}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Takoyaki Octopus</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 150.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={tomyum}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Jajangmeyon</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 250.000</div>
-
-                    </div>
-                </div>
-            </Box>
+                                color: '#FABC1D',
+                                marginBottom: '24px'
+                            }}> {data.price} </div>
+                        </Paper>
+                    </Grid>
+                ))}
+            </Grid>
             <Footer/>
         </Container>
         

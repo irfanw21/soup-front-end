@@ -8,13 +8,13 @@ import LandingPage from './pages/landing'
 import ListMenuKelas from './pages/list-menu-kelas'
 import DetailProduk from './pages/detail-produk'
 import Checkout from './pages/checkout'
-import HeaderAuth from './components/Header-auth'
 import { Routes, Route } from 'react-router-dom'
 import Layout from "./layouts"
-import HeaderSignIn from './components/Header-signed-in'
 import Login from './pages/login'
-import Footer from './components/Footer'
 import CustomizedTables from './pages/invoice'
+import AfterClass from './pages/after-class'
+import DetailClass from './pages/detail-class'
+import ForgotPassword from './pages/reset-password'
 
 function App() {
 
@@ -34,7 +34,7 @@ function App() {
 
     // </>
     <Routes>
-        <Route path="/" element={<Layout />}>
+
           <Route index element={<Homepage />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
@@ -46,7 +46,10 @@ function App() {
           <Route path='/list-menu-kelas' element={<ListMenuKelas/>} />
           <Route path='/checkout' element={<Checkout/>} />
           <Route path='/invoice' element={<CustomizedTables/>} />
-        </Route>
+          <Route path='/detail-class' element={<DetailClass/>} />
+          <Route path='/after-class' element={<AfterClass/>} />
+          <Route path='/reset-password' element={<ForgotPassword/>} />
+
       </Routes>
   )
 }

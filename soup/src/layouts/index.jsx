@@ -38,6 +38,12 @@ const Layout = () => {
                 <li>
                     <Link to="/invoice">invoice</Link>
                 </li>
+                <li>
+                    <Link to="/detail-class">Detail Class</Link>
+                </li>
+                <li>
+                    <Link to="/after-class">After Class</Link>
+                </li>
                 </ul>
             </nav>
             <Outlet />

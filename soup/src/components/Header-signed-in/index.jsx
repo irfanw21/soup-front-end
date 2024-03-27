@@ -25,6 +25,7 @@ const HeaderSignIn = () => {
                     display: 'flex', justifyContent: 'space-between'
                 }}
             >
+                <Link to="/checkout">
                 <Button 
                    variant="text"
                    sx={{
@@ -40,6 +41,9 @@ const HeaderSignIn = () => {
                  >
                    <img src={keranjang} alt="Keranjang" style={{ display: 'block' }} />
                 </Button>
+                </Link>
+
+                <Link to="/after-class">
                 <Button
                     variant="text"
                     sx={[{ '&:hover': { backgroundColor: 'white'}, 
@@ -50,12 +54,15 @@ const HeaderSignIn = () => {
                     fontFamily: 'Montserrat, sans-serif' }]}>
                         My Class
                 </Button>
-                
-                <Button
-                    variant="text"
-                    sx={[{ '&:hover': { backgroundColor: 'white'}, width: '140px', marginRight: '10', backgroundColor: 'white', color: '#5B4947', border: 'none', fontFamily: 'Montserrat, sans-serif' }]}>
-                    Invoice
-                </Button>
+                </Link>
+
+                <Link to="/invoice">
+                    <Button
+                        variant="text"
+                        sx={[{ '&:hover': { backgroundColor: 'white'}, width: '140px', marginRight: '10', backgroundColor: 'white', color: '#5B4947', border: 'none', fontFamily: 'Montserrat, sans-serif' }]}>
+                        Invoice
+                    </Button>
+                </Link>
 
                 <div style={{ border: '1px solid black', height: '25px', width: '0px', marginLeft: '10px', marginRight: '40px', marginTop: '10px', marginBottom: '10px'}}></div>
 
@@ -73,6 +80,7 @@ const HeaderSignIn = () => {
                    }}>
                         <img src={user} alt="User" style={{display: 'block' }}/>
                 </Button>
+                <Link to="/landing">
                 <Button variant="text"
                    sx={{
                      '&:hover': { backgroundColor: 'white', opacity: 0.7 },
@@ -86,6 +94,7 @@ const HeaderSignIn = () => {
                    }}>
                     <img src={logout} alt="Logout" style={{ display: 'block' }} />
                 </Button>
+                </Link>
             </Box>
         </div>
     </header>
