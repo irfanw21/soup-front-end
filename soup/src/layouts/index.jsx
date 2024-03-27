@@ -35,6 +35,9 @@ const Layout = () => {
                 <li>
                     <Link to="/checkout">Checkout</Link>
                 </li>
+                <li>
+                    <Link to="/invoice">invoice</Link>
+                </li>
                 </ul>
             </nav>
             <Outlet />

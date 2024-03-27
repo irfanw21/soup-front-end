@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
-import { Checkbox, FormGroup, FormControlLabel, Box, Container, Grid, Button} from '@mui/material';
+import { Checkbox, FormGroup, FormControlLabel, Box, Container, Grid, Button, Typography} from '@mui/material';
 import { Card, CardContent } from '@mui/material';
+import { Modal, List, ListItem, ListItemText } from '@mui/material';
 import ramen from "../../assets/ichiraku-ramen.png"
 import tomyum from "../../assets/tomyum.png"
 import bolognese from "../../assets/spaghetti-bolognese.png"
 import trash from "../../assets/delete.png"
+import paybca from "../../assets/payment-bca.png"
+import paybni from "../../assets/payment-bni.png"
+import paydana from "../../assets/payment-dana.png"
+import paygopay from "../../assets/payment-gopay.png"
+import payovo from "../../assets/payment-ovo.png"
+import paymandiri from "../../assets/payment-mandiri.png"
 import '@fontsource/Montserrat/300.css';
 import '@fontsource/Montserrat/400.css';
 import '@fontsource/Montserrat/500.css';
@@ -22,10 +29,23 @@ const Checkout = () => {
         { id: 3, category: "Eastern", name: "Italian Spaghetti Bolognese", schedule: "Monday, 25 July 2022", price: "IDR 450.000",img: bolognese }
     ]
 
+    const [open, setOpen] = useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
+
+    const paymentOptions = [
+        { name: 'Gopay', icon: paygopay },
+        { name: 'OVO', icon: payovo },
+        { name: 'DANA', icon: paydana },
+        { name: 'Mandiri', icon: paymandiri },
+        { name: 'BCA', icon: paybca },
+        { name: 'BNI', icon: paybni }
+    ];
+
     const handleToggle = (id) => {
         const currentIndex = selectedClass.indexOf(id);
         const newChecked = [...selectedClass];
-    
+        
         if (currentIndex === -1) {
         newChecked.push(id);
         } else {
@@ -161,10 +181,79 @@ const Checkout = () => {
                     backgroundColor: '#EA9E1F', 
                     color: '#5B4947', 
                     fontFamily: 'Montserrat, sans-serif'}]}
+                    onClick={handleOpen}
                 >
                     Pay Now 
                 </Button>
-                
+                <Modal
+                    open={open}
+                    onClose={handleClose}
+                    aria-labelledby="modal-modal-title"
+                    aria-describedby="modal-modal-description"
+                    
+                >
+                <Box sx={{
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    transform: 'translate(-50%, -50%)',
+                    width: 400,
+                    bgcolor: 'background.paper',
+                    border: '2px solid #000',
+                    boxShadow: 24,
+                    p: 4,
+                    fontFamily: 'Montserrat',
+                    borderRadius: '10px'}}>
+                    <Typography sx={{
+                        textAlign: 'center',
+                        fontWeight: 500,
+                        fontSize: '20px',
+                        
+                    }}>
+                        Choose Payment Method
+                    </Typography>
+                    <List>
+                        {paymentOptions.map((option, index) => (
+                            <ListItem key={index}>
+                                <div>
+                                    <img src={option.icon}/>
+                                </div>
+                                <ListItemText  sx={{marginLeft: '16px'}} primary={option.name} />
+                            </ListItem>
+                        ))}
+                    </List>
+                    <Box sx={{ display: 'flex', justifyContent: 'center'}}>
+                    
+                        <Button 
+                            variant="outlined"
+                            onClick={handleClose}
+                            sx={[{ '&:hover': { 
+                                    backgroundColor: 'white', 
+                                    border: '1px solid #5B4947' }, 
+                                width: '140px', borderRadius: '8px', 
+                                marginRight: '40px', 
+                                backgroundColor: 'white', 
+                                border: '1px solid #5B4947', 
+                                color: '#5B4947', 
+                                fontFamily: 'Montserrat, sans-serif' }]}>
+                                    Cancel
+                            </Button>
+                    
+                    
+                        <Button 
+                            variant="contained" 
+                            sx={[{ '&:hover': { 
+                                    backgroundColor: '#EA9E1F' }, 
+                                width: '140px', 
+                                borderRadius: '8px', 
+                                backgroundColor: '#EA9E1F', 
+                                color: '#5B4947', 
+                                fontFamily: 'Montserrat, sans-serif'}]}>
+                                    Pay Now
+                        </Button>
+                    </Box>
+                </Box>
+            </Modal>
             </footer>
         </Container>
     )

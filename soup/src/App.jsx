@@ -14,6 +14,7 @@ import Layout from "./layouts"
 import HeaderSignIn from './components/Header-signed-in'
 import Login from './pages/login'
 import Footer from './components/Footer'
+import CustomizedTables from './pages/invoice'
 
 function App() {
 
@@ -40,10 +41,11 @@ function App() {
           <Route path='/email-confirmation' element={<EmailConfirmation />} />
           <Route path='/detail' element={<Detail />} />
           <Route path='/create-password' element={<CreatePassword />} />
-          <Route path='/detail-product' element={<DetailProduk />} />
+          <Route path='/detail-produk' element={<DetailProduk />} />
           <Route path='/landing' element={<LandingPage/>} />
           <Route path='/list-menu-kelas' element={<ListMenuKelas/>} />
           <Route path='/checkout' element={<Checkout/>} />
+          <Route path='/invoice' element={<CustomizedTables/>} />
         </Route>
       </Routes>
   )

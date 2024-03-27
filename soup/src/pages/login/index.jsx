@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Box, TextField, Container, Button } from '@mui/material';
+import HeaderAuth from "../../components/Header-auth"
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -184,6 +185,7 @@ const Login = () => {
         }
         `}
       </style>
+      <HeaderAuth/>
       <Box className="welcome-text">
       Welcome Back! Cheff
       </Box>

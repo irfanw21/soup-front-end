@@ -23,10 +23,11 @@ import logoinsta from "../../assets/logo-insta.png"
 import keranjang from "../../assets/keranjang.png"
 import user from "../../assets/user.png"
 import logout from "../../assets/logout.png"
-
+import HeaderSignIn from "../../components/Header-signed-in"
 import { useState } from "react"
 import {Box, TextField, Container, Button} from '@mui/material'
 import styled from "styled-components"
+import Footer from "../../components/Footer"
 import '@fontsource/Montserrat/300.css';
 import '@fontsource/Montserrat/400.css';
 import '@fontsource/Montserrat/500.css';
@@ -40,7 +41,8 @@ const DetailClass = () => {
 
     return (
         <Container>
-         <div className="navbar-landing">
+         <div className="navbar-detail">
+         <HeaderSignIn/>
     <div className="flex flex-space-between items-center">
         <div style={{ marginRight: '10px' }}><img src={ImageNavbar} /></div>
         <div className="flex">
@@ -424,6 +426,7 @@ const DetailClass = () => {
                     </div>
                 </div>
             </Box>
+            <Footer/>
         </Container>
         
     )
