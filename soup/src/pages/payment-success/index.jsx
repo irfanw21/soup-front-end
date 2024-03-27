@@ -21,7 +21,7 @@ const PaymentSuccess = () => {
                     <div className='mt-40 text-24 font-500 text-brown'>Purchase Successfully</div>
                     <div className='mt-8 text-16 text-gray-light'>Horay!! Let’s cook and become a professional cheff</div>
                     <div className='mt-40'>
-                    <Link to="/afterclass">
+                    <Link to="/after-class">
                             <button className='px-24 py-16 bg-yellow text-brown border-none rounded-6 font-600' style={{marginRight: '10px', width:'182px', height:'50px'}}>
                                 <img style={{marginRight:"10px"}} src={rumah}/>Back to Home
                             </button>

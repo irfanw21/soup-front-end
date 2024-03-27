@@ -12,6 +12,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from "./layouts"
 import Login from './pages/login'
 import CustomizedTables from './pages/invoice'
+import DetailClass from './pages/detail-class'
 import AfterClass from './pages/after-class'
 import ForgotPassword from './pages/reset-password'
 import PaymentSuccess from './pages/payment-success'
@@ -49,6 +50,7 @@ function App() {
           <Route path='/detail-class' element={<DetailClass/>} />
           <Route path='/after-class' element={<AfterClass/>} />
           <Route path='/reset-password' element={<ForgotPassword/>} />
+          <Route path='/payment-success' element={<PaymentSuccess/>} />
       </Routes>
   )
 }

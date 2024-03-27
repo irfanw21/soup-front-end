@@ -18,6 +18,7 @@ import '@fontsource/Montserrat/500.css';
 import '@fontsource/Montserrat/600.css';
 import '@fontsource/Montserrat/700.css';
 import HeaderSignIn from "../../components/Header-signed-in"
+import { Link } from 'react-router-dom';
 
 const Checkout = () => {
 
@@ -239,7 +240,7 @@ const Checkout = () => {
                                     Cancel
                             </Button>
                     
-                    
+                        <Link to="/payment-success">
                         <Button 
                             variant="contained" 
                             sx={[{ '&:hover': { 
@@ -251,6 +252,7 @@ const Checkout = () => {
                                 fontFamily: 'Montserrat, sans-serif'}]}>
                                     Pay Now
                         </Button>
+                        </Link>
                     </Box>
                 </Box>
             </Modal>
