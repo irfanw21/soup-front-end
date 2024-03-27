@@ -1,4 +1,3 @@
-import ImageNavbar from "../../assets/image-navbar-logo.png"
 import imageTitle from "../../assets/title-bg.png"
 import interludeBg from "../../assets/interlude-bg.png"
 import tomyum from "../../assets/tomyum.png"
@@ -15,19 +14,15 @@ import cateastern from "../../assets/cat-eastern.png"
 import catdessert from "../../assets/cat-dessert.png"
 import catcookies from "../../assets/cat-cookies.png"
 import catcolddrink from "../../assets/cat-cold-drink.png"
-import logotelp from "../../assets/logo-telp.png"
-import logomail from "../../assets/logo-mail.png"
-import logotele from "../../assets/logo-telegram.png"
-import logoyt from "../../assets/logo-youtube.png"
-import logoinsta from "../../assets/logo-insta.png"
-import { useState } from "react"
-import {Box, TextField, Container, Button} from '@mui/material'
-import styled from "styled-components"
+import { Link } from 'react-router-dom'
+import {Box, Container , Grid, Paper} from '@mui/material'
 import '@fontsource/Montserrat/300.css';
 import '@fontsource/Montserrat/400.css';
 import '@fontsource/Montserrat/500.css';
 import '@fontsource/Montserrat/600.css';
 import '@fontsource/Montserrat/700.css';
+import HeaderAuth from "../../components/Header-auth"
+import Footer from "../../components/Footer"
 
 const LandingPage = () => {
 
@@ -35,51 +30,97 @@ const LandingPage = () => {
     
     }
 
-    const productCategories = [
-        'Electric',
-        'LCGC',
-        'Offroad',
-        'SUV',
-        'Hatchback',
-        'MPV',
-        'Sedan',
-        'Truck'
-      ];
+    const proClass = [
+        {
+            id: 1,
+            category: 'Asian',
+            name: 'Tom Yum Thailand',
+            price: 'IDR 450.000',
+            img: tomyum
+        },
+        {
+            id: 2,
+            category: 'Cold Drink',
+            name: 'Strawberry Float',
+            price: 'IDR 150.000',
+            img: strawfloat
+        },
+        {
+            id: 3,
+            category: 'Cookies',
+            name: 'Chocolate Cookies',
+            price: 'IDR 200.000',
+            img: chococookies
+        },
+        {
+            id: 4,
+            category: 'Dessert',
+            name: 'Green Tea Cheesecake',
+            price: 'IDR 400.000',
+            img: greenteacheesecake
+        },
+        {
+            id: 5,
+            category: 'Asian',
+            name: 'Soto Banjar Limau Kulit',
+            price: 'IDR 150.000',
+            img: sotobanjar
+        },
+        {
+            id: 6,
+            category: 'Western',
+            name: 'Italian Spaghetti Bolognese',
+            price: 'IDR 450.000',
+            img: bolognese
+        }
+    ]
+
+    const categoryClass = [
+        {
+            id: 1,
+            name: 'Asian',
+            img: catasian
+        },
+        {
+            id: 2,
+            name: 'Cold Drink',
+            img: catcolddrink
+        },
+        {
+            id: 3,
+            name: 'Cookies',
+            img: catcookies
+        },
+        {
+            id: 4,
+            name: 'Dessert',
+            img: catdessert
+        },
+        {
+            id: 5,
+            name: 'Eastern',
+            img: cateastern
+        },
+        {
+            id: 6,
+            name: 'Hot Drink',
+            img: cathotdrink
+        },
+        {
+            id: 7,
+            name: 'Junkfood',
+            img: catjunkfood
+        },
+        {
+            id: 8,
+            name: 'Western',
+            img: catwestern
+        },
+    ]
     
     return (
         <Container>
-            <div className = "navbar-landing">
-                <div className='flex flex-space-between'>
-                    <div style={{marginRight: '10px'}}><img src={ImageNavbar} /></div>
-                    <div>
-                        <Button 
-                            variant="outlined"
-                            sx={[{ '&:hover': { 
-                                    backgroundColor: 'white', 
-                                    border: '1px solid #5B4947' }, 
-                                width: '140px', borderRadius: '8px', 
-                                marginRight: '40px', 
-                                backgroundColor: 'white', 
-                                border: '1px solid #5B4947', 
-                                color: '#5B4947', 
-                                fontFamily: 'Montserrat, sans-serif' }]}>
-                                    Login
-                        </Button>
-                        <Button 
-                            variant="contained" 
-                            onClick={handleClick} 
-                            sx={[{ '&:hover': { 
-                                    backgroundColor: '#EA9E1F' }, 
-                                width: '140px', 
-                                borderRadius: '8px', 
-                                backgroundColor: '#EA9E1F', 
-                                color: '#5B4947', 
-                                fontFamily: 'Montserrat, sans-serif'}]}>
-                                    Register
-                        </Button>
-                    </div>
-                </div>
-            </div>
+            <HeaderAuth/>
 
             <Box
                 sx={{
@@ -232,217 +273,35 @@ const LandingPage = () => {
                 More professional class
             </div>
 
-            <Box
-                sx={{
-                    justifyContent: 'space-between',
-                    gap: '24px',
-                    display: 'grid',
-                    gridTemplateColumns: 'auto auto auto',
-                    alignContent: 'center',
-                    justifyItems: 'center',
-                    fontFamily: 'Montserrat',
-                    marginTop: '60px'
-                }}
+            <Grid container spacing={2} fontFamily={'Montserrat'}
             >
-                <div><img src={tomyum}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
+                {proClass.map((data) => (
+                    <Grid item key={data.id} xs={12} sm={6} md={4}>
+                        <Paper elevation={0} style={{ padding: 20 }}>
+                            <div> <img src={data.img}/> </div>
                             <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
+                                    fontWeight: 400,
+                                    fontSize: '16px',
+                                    color: '#828282'
+                                }}
+                            > {data.category} </div>
                             <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Tom Yum Thailand</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 450.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={strawfloat}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Cold Drink</div>
-
+                                    fontWeight: 600,
+                                    fontSize: '20px',
+                                    width: '320px',
+                                    height: '70px',
+                                    color: '#5B4947'
+                                }}> {data.name} </div>
                             <div style={{
                                 fontWeight: 600,
                                 fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Strawberry Float</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 150.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={chococookies}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Cookies</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Chocolate Cookies</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 200.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={greenteacheesecake}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Dessert</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Green Tea Cheesecake</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 400.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={sotobanjar}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Asian</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Soto Banjar</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 150.000</div>
-
-                    </div>
-                </div>
-
-                <div><img src={bolognese}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div style={{
-                            width: '318px',
-                            height: '94px'
-                        }}>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '16px',
-                                color: '#828282'
-                            }}>Western</div>
-
-                            <div style={{
-                                fontWeight: 600,
-                                fontSize: '20px',
-                                color: '#5B4947'
-                            }}>Italian Spaghetti Bolognese</div>
-                        </div>
-
-                        <div style={{
-                            fontWeight: 600,
-                            fontSize: '20px',
-                            color: '#FABC1D'
-                        }}>IDR 450.000</div>
-
-                    </div>
-                </div>
-
-            </Box>
+                                color: '#FABC1D',
+                                marginBottom: '24px'
+                            }}> {data.price} </div>
+                        </Paper>
+                    </Grid>
+                ))}
+            </Grid>
 
             <Box
                 sx={{
@@ -496,339 +355,31 @@ const LandingPage = () => {
                 More food type as you can choose
             </div>
 
-            <Box
-                sx={{
-                    justifyContent: 'space-around',
-                    gap: '24px',
-                    display: 'grid',
-                    gridTemplateColumns: '24px 24px 24px 24px',
-                    alignItems: 'center',
-                    alignContent: 'center',
-                    justifyItems: 'center',
-                    fontFamily: 'Montserrat',
-                    marginTop: '80px'
-                }}
+            <Grid container spacing={3} fontFamily={'Montserrat'}
             >
-                <div><img  style={{
-                    border: '1px solid #BDBDBD',
-                    borderRadius: '8px'
-                }} src={catasian}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
+                {categoryClass.map((data) => (
+                    <Grid item key={data.id} xs={12} sm={6} md={3}>
+                        <Link to={'/list-menu-kelas'} style={{ textDecoration: 'none' }}>
+                            <Paper elevation={0} style={{ padding: 20 }}>
+                                <div 
+                                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}
+                                > 
+                                    <img src={data.img} alt={data.name} style={{ marginBottom: '16px' }}/> 
+                                    <div style={{
+                                            fontWeight: 400,
+                                            fontSize: '24px',
+                                            color: 'black',
+                                            textAlign: 'center'
+                                        }}
+                                    > {data.name} </div>
+                                </div>
+                            </Paper>
+                        </Link>
+                    </Grid>
+                ))}
+            </Grid>
 
-                        <div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '24px',
-                                color: 'black',
-                                textAlign: 'center'
-                            }}>Asian</div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div><img style={{
-                    border: '1px solid #BDBDBD',
-                    borderRadius: '8px'
-                }} src={catcolddrink}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '24px',
-                                color: 'black',
-                                textAlign: 'center'
-                            }}>Cold Drink</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div><img style={{
-                    border: '1px solid #BDBDBD',
-                    borderRadius: '8px'
-                }} src={catcookies}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '24px',
-                                color: 'black',
-                                textAlign: 'center'
-                            }}>Cookies</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div><img  style={{
-                    border: '1px solid #BDBDBD',
-                    borderRadius: '8px'
-                }} src={catdessert}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '24px',
-                                color: 'black',
-                                textAlign: 'center'
-                            }}>Dessert</div>
-                        </div>
-                    </div>
-                </div>
-
-                <div><img style={{
-                    border: '1px solid #BDBDBD',
-                    borderRadius: '8px'
-                }} src={cateastern}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '24px',
-                                color: 'black',
-                                textAlign: 'center'
-                            }}>Eastern</div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div><img  style={{
-                    border: '1px solid #BDBDBD',
-                    borderRadius: '8px'
-                }} src={cathotdrink}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '24px',
-                                color: 'black',
-                                textAlign: 'center'
-                            }}>Hot Drink</div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div><img  style={{
-                    border: '1px solid #BDBDBD',
-                    borderRadius: '8px'
-                }} src={catjunkfood}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '24px',
-                                color: 'black',
-                                textAlign: 'center'
-                            }}>Junkfood</div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <div><img  style={{
-                    border: '1px solid #BDBDBD',
-                    borderRadius: '8px'
-                }} src={catwestern}/>
-                    <div
-                        style={{
-                            padding: '16px'
-                        }}
-                    >   
-
-                        <div>
-                            <div style={{
-                                fontWeight: 400,
-                                fontSize: '24px',
-                                color: 'black',
-                                textAlign: 'center'
-                            }}>Western</div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </Box>
-
-            <div
-                style={{
-                    display: 'flex',
-                    background: '#5B4947',
-                    backgroundPosition: 'center',
-                    alignItems: 'center', 
-                    fontFamily: 'Montserrat',
-                    marginTop: '147px'
-                }}
-            >
-                <Box
-                    sx={{
-                        justifyContent: 'space-around',
-                        gap: '80px',
-                        display: 'grid',
-                        gridTemplateColumns: 'auto auto auto',
-                        alignItems: 'center',
-                        alignContent: 'center',
-                        justifyItems: 'center',
-                        fontFamily: 'Montserrat',
-                        paddingTop: '24px',
-                        paddingLeft: '95px',
-                        paddingRight: '95px',
-                        paddingBottom: '24px'
-                    }}
-                >
-                    <div
-                        style={{
-                            alignContent: 'center'
-                        }}    
-                    >
-                        <div
-                            style={{
-                                fontWeight: 500,
-                                fontSize: '16px',
-                                color: '#FABC1D',
-                                marginBottom: '8px'
-                            }}
-                        >About Us</div>
-
-                        <div
-                            style={{
-                                fontWeight: 400,
-                                fontSize: '14px',
-                                textAlign: 'justify',
-                                color: 'white'
-                            }}
-                        >
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. 
-                        </div>
-                    </div>
-
-                    <div
-                        style={{
-                            alignContent: 'center'
-                        }}    
-                    >
-                        <div
-                            style={{
-                                fontWeight: 500,
-                                fontSize: '16px',
-                                color: '#FABC1D',
-                                marginBottom: '8px'
-                            }}
-                        >Product</div>
-
-                        <div
-                            style={{
-                                fontWeight: 400,
-                                fontSize: '14px',
-                                display: 'flex',
-                                justifyContent: 'space-between',
-                                color: 'white'
-                            }}
-                        >
-                            <ul style={{ listStyleType: 'disc'}}>
-                                {productCategories.slice(0, Math.ceil(productCategories.length / 2)).map((category, index) => (
-                                    <li key={index}>{category}</li>
-                                ))}
-                                </ul>
-                                <ul style={{ listStyleType: 'disc'}}>
-                                {productCategories.slice(Math.ceil(productCategories.length / 2)).map((category, index) => (
-                                    <li key={index}>{category}</li>
-                                ))}
-                            </ul>                     
-                        </div>
-                    </div>
-
-                    <div
-                        style={{
-                            alignContent: 'center'
-                        }}    
-                    >
-                        <div
-                            style={{
-                                fontWeight: 500,
-                                fontSize: '16px',
-                                color: '#FABC1D',
-                                marginBottom: '8px'
-                            }}
-                        >Address</div>
-
-                        <div
-                            style={{
-                                fontWeight: 400,
-                                fontSize: '14px',
-                                textAlign: 'justify',
-                                color: 'white'
-                            }}
-                        >
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.
-                        </div>
-
-                        <div
-                            style={{
-                                fontWeight: 500,
-                                fontSize: '16px',
-                                color: '#FABC1D',
-                                marginTop: '16px',
-                                marginBottom: '8px'
-                            }}
-                        >Contact Us</div>
-
-                        <Box
-                            sx={{
-                                display: "flex",
-                                gap: '16px',
-                                marginTop: '8px'
-                            }}
-                        >
-                            <div><img src={logotelp}/></div>
-                            <div><img src={logoinsta}/></div>
-                            <div><img src={logoyt}/></div>
-                            <div><img src={logotele}/></div>
-                            <div><img src={logomail}/></div>
-                            
-                        </Box>
-
-                    </div>
-
-                    
-                </Box>
-            </div>
-
-            
+            <Footer/>
         </Container>
         
     )

@@ -7,6 +7,7 @@ import '@fontsource/Montserrat/300.css';
 import '@fontsource/Montserrat/400.css';
 import '@fontsource/Montserrat/500.css';
 import '@fontsource/Montserrat/700.css';
+import HeaderAuth from '../../components/Header-auth'
 
 const Input = styled.input `
     width: 100%;
@@ -191,13 +192,7 @@ const Register = () => {
     return (
         <Container>
             <div className = "register">
-            <div className='flex flex-space-between'>
-                    <div className='mr-10'><img src={ImageNavbar} /></div>
-                    <div>
-                        <Button variant="outlined" sx={[{ '&:hover': { backgroundColor: 'white', border: '1px solid #5B4947' }, width: '140px', borderRadius: '8px', marginRight: '40px', backgroundColor: 'white', border: '1px solid #5B4947', color: '#5B4947', fontFamily: 'Montserrat, sans-serif' }]}>Login</Button>
-                        <Button variant="contained" onClick={handleClick} sx={[{ '&:hover': { backgroundColor: '#EA9E1F' }, width: '140px', borderRadius: '8px', backgroundColor: '#EA9E1F', color: '#5B4947', fontFamily: 'Montserrat, sans-serif'}]}>Register</Button>
-                    </div>
-                </div>
+                <HeaderAuth/>
 
                 <Box
                 display={'flex'}

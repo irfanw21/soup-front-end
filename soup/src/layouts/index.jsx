@@ -12,6 +12,9 @@ const Layout = () => {
                     <Link to="/register">Register</Link>
                 </li>
                 <li>
+                    <Link to="/login">Log In</Link>
+                </li>
+                <li>
                     <Link to="/email-confirmation">Email</Link>
                 </li>
                 <li>
@@ -32,9 +35,6 @@ const Layout = () => {
                 </ul>
             </nav>
             <Outlet />
-            <footer>
-                <p>Footer</p>
-            </footer>
         </div>
     )
 }
