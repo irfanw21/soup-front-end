@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Checkbox, FormGroup, FormControlLabel, Box, Container, Grid, Paper, Typography, IconButton, Button} from '@mui/material';
+import { Checkbox, FormGroup, FormControlLabel, Box, Container, Grid, Button} from '@mui/material';
 import { Card, CardContent } from '@mui/material';
-import Popover from '@mui/material';
 import ramen from "../../assets/ichiraku-ramen.png"
 import tomyum from "../../assets/tomyum.png"
 import bolognese from "../../assets/spaghetti-bolognese.png"
@@ -16,19 +15,6 @@ import HeaderSignIn from "../../components/Header-signed-in"
 const Checkout = () => {
 
     const [selectedClass, setSelectedClass] = useState([]);
-
-    const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
-
-    const handleClick = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
-
-    const handleClose = () => {
-        setAnchorEl(null);
-    };
-
-    const open = Boolean(anchorEl);
-    const id = open ? 'simple-popover' : undefined;
 
     const proClass = [
         { id: 1, category: "Asian", name: "Tom Yum Thailand", schedule: "Wednesday, 27 July 2022", price: "IDR 450.000", img: tomyum },
@@ -77,7 +63,7 @@ const Checkout = () => {
                 <Grid container spacing={2} sx={{ display: 'flex', flexDirection: 'column'}} >
                     {proClass.map((proClass) => (
                     <Grid item xs={12} sm={6} md={4} key={proClass.id}  >
-                        <Card sx={{ borderBottom: "2px solid rgba(0,0,0,0.2)"}}>
+                        <Card sx={{ borderBottom: "2px solid rgba(0,0,0,0.2)", width: '1140px'}}>
                             <CardContent>
                                 <FormControlLabel
                                     control={
@@ -87,46 +73,47 @@ const Checkout = () => {
                                         />
                                     }
                                     label={<>
-                                        <div><img src={proClass.img} alt={proClass.name} /> </div>
-                                        <Box
-                                            sx={{
-                                                alignItems: 'center',
-                                                paddingLeft: '24px',
-                                                paddingRight: '100px'
-                                            }}
-                                        >
-                                            <div style={{
-                                                fontWeight: 400,
-                                                fontSize: '16px',
-                                                color: '#828282'
-                                            }}> {proClass.category}</div>
+                                        <Box sx={{ display:'flex' , justifyContent: 'space-between'}}>
+                                            <div><img src={proClass.img} alt={proClass.name} style={{width: '100%'}} /> </div>
+                                            <Box
+                                                sx={{
+                                                    padding: '10px 100px 10px 24px',
+                                                    width: '500px'
+                                                }}
+                                            >
+                                                <div style={{
+                                                    fontWeight: 400,
+                                                    fontSize: '16px',
+                                                    color: '#828282'
+                                                }}> {proClass.category}</div>
 
-                                            <div style={{
-                                                fontWeight: 600,
-                                                fontSize: '20px',
-                                                color: '#5B4947'
-                                            }}>{proClass.name}</div>
+                                                <div style={{
+                                                    fontWeight: 600,
+                                                    fontSize: '20px',
+                                                    color: '#5B4947'
+                                                }}>{proClass.name}</div>
 
-                                            <div style={{
-                                                fontWeight: 400,
-                                                fontSize: '16px',
-                                                color: '#828282'
-                                            }}> {proClass.schedule}</div>
-                                            
-                                            <div style={{
-                                                fontWeight: 600,
-                                                fontSize: '20px',
-                                                color: '#FABC1D'
-                                            }}> {proClass.price}</div>
+                                                <div style={{
+                                                    fontWeight: 400,
+                                                    fontSize: '16px',
+                                                    color: '#828282'
+                                                }}> {proClass.schedule}</div>
+                                                
+                                                <div style={{
+                                                    fontWeight: 600,
+                                                    fontSize: '20px',
+                                                    color: '#FABC1D'
+                                                }}> {proClass.price}</div>
+                                            </Box>
+
+                                            <Box
+                                                sx={{
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'end'
+                                                }}
+                                            > <img src={trash} /></Box>
                                         </Box>
-
-                                        <Box
-                                            sx={{
-                                                display: 'flex',
-                                                alignItems: 'center'
-                                            }}
-                                        > <img src={trash} /></Box>
-                                        
                                     </>}
                                 />
                             </CardContent>
@@ -167,7 +154,6 @@ const Checkout = () => {
                 </div>
                 <Button 
                     variant="outlined"
-                    aria-describedby={id}
                     sx={[{ '&:hover': { 
                         backgroundColor: '#EA9E1F' }, 
                     width: '140px', 
@@ -175,50 +161,10 @@ const Checkout = () => {
                     backgroundColor: '#EA9E1F', 
                     color: '#5B4947', 
                     fontFamily: 'Montserrat, sans-serif'}]}
-                    onClick={handleClick}
                 >
                     Pay Now 
                 </Button>
-                <Popover
-                    id={id}
-                    open={open}
-                    anchorEl={anchorEl}
-                    onClose={handleClose}
-                    anchorOrigin={{
-                      vertical: 'center',
-                      horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                        vertical: 'center',
-                        horizontal: 'center',
-                      }}
-                >
-                    <Box p={2}>
-                        <Typography variant="h6" gutterBottom>
-                            Select Payment Method
-                        </Typography>
-                        <List>
-                            <ListItem button>
-                            <ListItemText primary="Credit Card" />
-                            </ListItem>
-                            <ListItem button>
-                            <ListItemText primary="PayPal" />
-                            </ListItem>
-                            <ListItem button>
-                            <ListItemText primary="Google Pay" />
-                            </ListItem>
-                        </List>
-                        <Divider />
-                        <Box display="flex" justifyContent="flex-end">
-                            <Button color="secondary" onClick={handleClose} style={{ marginRight: 10 }}>
-                            Cancel
-                            </Button>
-                            <Button variant="contained" color="primary" onClick={handleClose}>
-                            Proceed
-                            </Button>
-                        </Box>
-                    </Box>
-                </Popover>
+                
             </footer>
         </Container>
     )
