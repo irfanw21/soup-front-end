@@ -13,8 +13,8 @@ import Layout from "./layouts"
 import Login from './pages/login'
 import CustomizedTables from './pages/invoice'
 import AfterClass from './pages/after-class'
-import DetailClass from './pages/detail-class'
 import ForgotPassword from './pages/reset-password'
+import PaymentSuccess from './pages/payment-success'
 
 function App() {
 
@@ -34,10 +34,10 @@ function App() {
 
     // </>
     <Routes>
-
           <Route index element={<Homepage />} />
           <Route path='/register' element={<Register />} />
           <Route path='/login' element={<Login />} />
+          <Route path='/paymentsuccess' element={<PaymentSuccess/>} />
           <Route path='/email-confirmation' element={<EmailConfirmation />} />
           <Route path='/detail' element={<Detail />} />
           <Route path='/create-password' element={<CreatePassword />} />
@@ -49,7 +49,6 @@ function App() {
           <Route path='/detail-class' element={<DetailClass/>} />
           <Route path='/after-class' element={<AfterClass/>} />
           <Route path='/reset-password' element={<ForgotPassword/>} />
-
       </Routes>
   )
 }

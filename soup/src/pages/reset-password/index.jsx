@@ -41,7 +41,7 @@ const ForgotPassword = () => {
 
   return (
     <>
-      <HeaderAuth/>
+<HeaderAuth/>
       <Box
         className="login-container"
         sx={{
