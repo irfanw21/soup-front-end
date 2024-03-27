@@ -1,9 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/image-navbar-logo.png'
-import keranjang from '../../assets/keranjang.png'
-import user from '../../assets/user.png'
-import logout from '../../assets/logout.png'
 import { Box, Button } from '@mui/material'
 import './index.css'
 

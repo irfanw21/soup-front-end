@@ -32,6 +32,9 @@ const Layout = () => {
                 <li>
                     <Link to="/list-menu-kelas">List Menu Kelas</Link>
                 </li>
+                <li>
+                    <Link to="/checkout">Checkout</Link>
+                </li>
                 </ul>
             </nav>
             <Outlet />

@@ -2,6 +2,7 @@ import './style.css'
 import { Container } from '@mui/material'
 import ImageNavbar from "../../assets/image-navbar-logo.png"
 import ImageBody from "../../assets/image-body-confirm.png"
+import {Link} from "react-router-dom"
 
 const EmailConfirmation = () => {
     return (
@@ -18,7 +19,11 @@ const EmailConfirmation = () => {
                     <div className='mt-40 text-24 font-500 text-brown'>Email Confirmation Success</div>
                     <div className='mt-8 text-16 text-gray-light'>Congratulations! your email has already used.</div>
                     <div className='mt-40'>
-                        <button className='px-24 py-16 bg-yellow text-brown border-none rounded-6 font-600'>Login Here</button>
+                        <Link to="/login">
+                            <button className='px-24 py-16 bg-yellow text-brown border-none rounded-6 font-600'>
+                                Login Here
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </div>

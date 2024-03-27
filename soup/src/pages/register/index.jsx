@@ -2,6 +2,7 @@ import {Box, TextField, Container, Button} from '@mui/material'
 import ImageNavbar from "../../assets/image-navbar-logo.png"
 import { useState } from "react"
 import styled from "styled-components"
+import { Link, useNavigate } from "react-router-dom"
 import './index.css'
 import '@fontsource/Montserrat/300.css';
 import '@fontsource/Montserrat/400.css';
@@ -45,7 +46,7 @@ const Register = () => {
         })
     }
 
-    // const [state, setState] = useState(0)
+    const navigate = useNavigate()
 
     const handleReset = () => {
 		setError({
@@ -179,6 +180,16 @@ const Register = () => {
                 setError({
                     confirmPassword: 'This Field Cannot Be Empty'
                 });
+                break;
+
+            case data.password != data.confirmPassword:
+                setError({
+                    confirmPassword: "Password Doesnt Match"
+                });
+                break;
+
+            case data.name && data.email && (data.password === data.confirmPassword):
+                navigate("/email-confirmation")
                 break;
 
             default:

@@ -7,6 +7,7 @@ import CreatePassword from './pages/create-password'
 import LandingPage from './pages/landing'
 import ListMenuKelas from './pages/list-menu-kelas'
 import DetailProduk from './pages/detail-produk'
+import Checkout from './pages/checkout'
 import HeaderAuth from './components/Header-auth'
 import { Routes, Route } from 'react-router-dom'
 import Layout from "./layouts"
@@ -28,6 +29,7 @@ function App() {
     //     {/* <HeaderSignIn/> */}
     //     {/* <Login/> */}
     //     {/* <Footer/> */}
+            // <Checkout/>
 
     // </>
     <Routes>
@@ -41,6 +43,7 @@ function App() {
           <Route path='/detail-product' element={<DetailProduk />} />
           <Route path='/landing' element={<LandingPage/>} />
           <Route path='/list-menu-kelas' element={<ListMenuKelas/>} />
+          <Route path='/checkout' element={<Checkout/>} />
         </Route>
       </Routes>
   )
